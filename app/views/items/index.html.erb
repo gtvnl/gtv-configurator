@@ -1,0 +1,71 @@
+<!-- Page header -->
+<%= content_for :page_title do %>
+  <h1 class="text-center">Alle Artikelen</h1>
+<% end %>
+
+<!-- Table -->
+<% if @items.blank? %>
+  <%= render 'layouts/no_data' %>
+<% else %>
+
+<div class="callout small primary">
+<table class="hover">
+  <thead>
+    <tr>
+      <th width="5%">Leverancier</th>
+      <th width="5%">Artikelnummer</th>
+      <th width="50%">Omschrijving</th>
+      <th width="8%">Bruto prijs</th>
+      <th width="5%">Korting</th>
+      <th width="8%">Netto prijs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+
+    <% if (item.discount == "0.0" && item.netto.nil?) && item.bruto != "0.0" %>
+      <tr style='background-color:#ffae00'>
+    <% elsif (item.discount == "0.0" && item.netto.nil?) %>
+      <tr style='background-color:#cc4b37'>
+    <% else %>
+      <tr>
+    <% end %>
+
+        <td><%= item.supplier %></td>
+        <td><%= link_to item.number, edit_item_path(item) %></td>
+        <td><%= item.description %></td>
+        <td>&euro; <%= item.bruto %></td>
+
+        <td><%= item.netto.nil? ? "#{item.discount} %" : "---" %></td>
+
+        <% if !item.netto.nil? %>
+          <td style='background-color:#3adb76'>
+        <% else %>
+          <td>
+        <% end %>
+          &euro; <%= item.netto_price %>
+        </td>
+
+
+        <td>
+          <!-- DELETE -->
+          <%= link_to item, method: :delete, data: { confirm: 'Weet je het zeker?' } do %>
+            <i class="fi-x"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="callout small text-center">
+  <%= paginate @items %>
+</div>
+
+<% end %>
+<%= link_to new_item_path, class: 'button large hollow', id: 'new' do %>
+  <i class="fi-plus"></i> Nieuw Artikel
+<% end %>

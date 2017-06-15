@@ -1,0 +1,8 @@
+<!-- Page header -->
+<%= content_for :page_title do %>
+  <h1 class="text-center">Nieuw Artikel</h1>
+<% end %>
+
+<%= render 'form', item: @item %>
+
+<%= link_to 'Back', items_path %>
