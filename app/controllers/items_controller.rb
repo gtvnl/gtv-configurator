@@ -1,6 +1,31 @@
 class ItemsController < ApplicationController
   include Concerns::ItemMethods
 
+  def import
+    # csv_file = params[:file]
+    #
+    # b = Roo::Spreadsheet.open(csv_file)
+    #
+    # errors = 0
+    #
+    # records_added = 0
+    # records_updated = 0
+    # info = []
+    #
+    # b.each(
+    #     delivery_date: 'Leverdatum',
+    #     material_pc: 'Order.Voorgecalculeerde materiaalkosten') do |hash|
+    #
+    #     unless hash[:order_number] == 'Order' # Skip the header
+    #
+    #
+    #    end
+    # end
+    #
+    # redirect_to orders_path, notice: "#{errors} errors while importing. #{records_added} added. #{records_updated} updated. #{info}"
+
+  end
+
   # GET /items
   def index
     items

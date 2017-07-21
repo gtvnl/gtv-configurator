@@ -3,25 +3,27 @@
     <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
       <button class="menu-icon dark" type="button" data-toggle></button>
     </span>
+    <%= link_to root_path do %>
     <div>
       <%= image_tag("gtv.png", size: "50x10", alt: "GTV") %>
       <strong>Configurator</strong>
     </div>
+    <% end %>
   </div>
 <!-- Left -->
   <div id="responsive-menu">
     <div class="top-bar-left">
-      <!-- <ul class="dropdown menu" data-dropdown-menu>
-        <li><%= link_to 'offertes', '#' %></li>
-        <li><%= link_to 'calculaties', '#' %></li>
+      <ul class="dropdown menu" data-dropdown-menu>
+        <!-- <li><%= link_to 'offertes', '#' %></li> -->
+        <!-- <li><%= link_to 'calculaties', '#' %></li> -->
         <li>
-          <%= link_to 'fabrikaten', '#' %>
+          <%= link_to 'artikelen', items_path %>
           <ul class="menu vertical">
-              <li><%= link_to 'systemen', '#' %></li>
+              <li><%= link_to 'import', import_items_path %></li>
           </ul>
         </li>
-        <li><%= link_to 'artikelen', '#' %></li>
-      </ul> -->
+        <!-- <li><%= link_to 'artikelen', '#' %></li> -->
+      </ul>
     </div>
     <!-- Right -->
     <div class="top-bar-right">
