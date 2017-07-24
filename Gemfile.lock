@@ -85,6 +85,10 @@ GEM
     diff-lcs (1.3)
     docile (1.1.5)
     erubis (2.7.0)
+    exception_handler (0.7.7.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     execjs (2.7.0)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
@@ -209,6 +213,7 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     public_suffix (2.0.5)
+    puma (3.6.2)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -337,6 +342,7 @@ DEPENDENCIES
   devise
   devise-foundation-views
   devise-nobrainer
+  exception_handler
   execjs
   factory_girl_rails
   faker
@@ -360,6 +366,7 @@ DEPENDENCIES
   pry
   pry-rescue
   pry-stack_explorer
+  puma
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-i18n (~> 5.0.0)
   roo

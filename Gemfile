@@ -21,7 +21,8 @@ gem 'devise-nobrainer'
 gem 'devise-foundation-views'
 gem 'kaminari'
 gem 'kaminari-nobrainer'
-
+gem 'puma'
+gem 'exception_handler'
 
 gem 'execjs'
 gem 'mini_racer'

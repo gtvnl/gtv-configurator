@@ -43,7 +43,7 @@ module Concerns
           end
 
           def item_params
-            params.require(:item).permit(:supplier, :number, :description, :bruto, :discount, :netto)
+            params.require(:item).permit(:supplier, :number, :description, :bruto, :discount, :netto, :file)
           end
       end
   end
